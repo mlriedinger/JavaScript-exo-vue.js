@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+      <h1>Welcome to {{ storeName }} </h1>
+        <h2>{{ headline }}</h2>
+          <form>
+            <label for="storeName">Store Name</label>
+            <input id="storeName" type="text" v-model="storeName"/>
+
+            <label for="headline">Headline</label>
+           
+            <!-- Méthode 1 : on appelle une fonction updateHeadline qui met à jour le h2-->
+            <input id="headline" type="text"/>
+            <input type="button" v-on:click="updateHeadline" value="Change headline"/> -->
+
+            <!-- Méthode 2 : on créé une variable newHeadline dans l'input et headline prend la valeur de newHeadline au moment du clic-->
+            <!-- <input id="headline" type="text" v-model="newHeadline"/>
+            <input type="button" v-on:click="headline = newHeadline" value="Change headline"/> -->
+
+          </form>
+          
+
+
+      </div>
+</body>
+
+<!-- development version, includes helpful console warnings -->
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="./script.js"></script>
+
+</html>
