@@ -1,10 +1,11 @@
 var app = new Vue({
     el: '#app',
     data: {
-      storeName: 'Hello world !',
-      headline: 'Best titre 2 ever',
+      storeName: 'la boutique de gâteaux',
+      headline: 'Le grand retour du come-back',
       newHeadline:'',
       changeColor: false,
+      showImage: false,
     },
     methods: {
         updateHeadline: function(){

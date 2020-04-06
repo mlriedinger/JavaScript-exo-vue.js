@@ -1,7 +1,45 @@
+#app {
+    width:60%;
+    margin:auto;
+    margin-top: 6em;
+    text-align: center;
+    border-radius: 2em;
+    padding:1.2em;
+    box-shadow: 5px 5px 5px #404040;
+    background-color: #f2f2f2;
+    color: #347474;
+}
+
+body {
+    background-image: url("./img/pileOfCookies.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+h1{
+    color: #ee8572;
+    font-size:2em;
+}
+
+h2{
+    color: #35495e;
+    font-size:1.5em;
+}
+
 .otherColorH1{
-    color: red;
+    color:#000839;
 }
 
 .otherColorH2{
-    color: orange;
+    color: #ffa41b;
+}
+
+.form-group {
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+.img-fluid{
+    border-radius: 2em;
 }

@@ -3,35 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css"/>
     <title>Document</title>
 </head>
 <body>
-    <div id="app">
-      <h1 :class="{otherColorH1: changeColor}">Welcome to {{ storeName }} </h1>
-        <h2 :class="{otherColorH2: changeColor}">{{ headline }}</h2>
-          <form>
-            <label for="storeName">Store Name</label>
-            <input id="storeName" type="text" v-model="storeName"/>
-
-            <label for="headline">Headline</label>
-           
-            <!-- Méthode 1 : on appelle une fonction updateHeadline qui met à jour le h2-->
-            <input id="headline" type="text"/>
-            <input type="button" @click="updateHeadline" value="Change headline"/> 
-
-            <!-- Méthode 2 : on créé une variable newHeadline dans l'input et headline prend la valeur de newHeadline au moment du clic-->
-            <!-- <input id="headline" type="text" v-model="newHeadline"/>
-            <input type="button" v-on:click="headline = newHeadline" value="Change headline"/> -->
-
-            <!-- Si on coche la case, alors les titres h1 et h2 changent de couleur-->
-            <label for="changeColor">Changer la couleur du titre</label>
-            <input id="changeColor" type="checkbox" @click="changeColor = !changeColor"/>
-          </form>
-          
-
-
-      </div>
+    <div class="container-fluid">
+      <div id="app">
+        <h1 :class="{otherColorH1: changeColor}">Welcome to {{ storeName }} </h1>
+          <h2 :class="{otherColorH2: changeColor}">{{ headline }}</h2>
+            <form class="form-group">
+              <label for="storeName">Store Name</label></br>
+              <input class="form-control" id="storeName" type="text" v-model="storeName"/></br>
+  
+              <label for="headline">Headline</label></br>
+             
+              <!-- Méthode 1 : on appelle une fonction updateHeadline qui met à jour le h2-->
+              <input class="form-control" id="headline" type="text"/></br>
+              <input type="button" class="btn btn-dark" @click="updateHeadline" value="Change headline"/></br>
+  
+              <!-- Méthode 2 : on créé une variable newHeadline dans l'input et headline prend la valeur de newHeadline au moment du clic-->
+              <!-- <input id="headline" type="text" v-model="newHeadline"/>
+              <input type="button" v-on:click="headline = newHeadline" value="Change headline"/> -->
+              <div class="form-group"> 
+                <!-- Si on coche la case, alors les titres h1 et h2 changent de couleur-->
+                <input id="changeColor" type="checkbox" @click="changeColor = !changeColor"/>
+                <label for="changeColor">Faire mumuse avec la couleur du titre</label></br>
+                
+                <!-- Si on coche la case, on affiche une image-->
+                <input id="image" type="checkbox" @click="showImage =!showImage"/>
+                <label for="image">Vous voulez quelque chose ?</label>
+                <div v-if="showImage">
+                  <img class="img-fluid" src="./img/cookies.jpg" alt="Une image de délicieux cookies"/>
+                </div>
+              </div>  
+            </form>
+        </div>
+    </div>
+    
 </body>
 
 <!-- development version, includes helpful console warnings -->
