@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css"/>
     <title>Document</title>
 </head>
 <body>
     <div id="app">
-      <h1>Welcome to {{ storeName }} </h1>
-        <h2>{{ headline }}</h2>
+      <h1 :class="{otherColorH1: changeColor}">Welcome to {{ storeName }} </h1>
+        <h2 :class="{otherColorH2: changeColor}">{{ headline }}</h2>
           <form>
             <label for="storeName">Store Name</label>
             <input id="storeName" type="text" v-model="storeName"/>
@@ -17,12 +18,15 @@
            
             <!-- Méthode 1 : on appelle une fonction updateHeadline qui met à jour le h2-->
             <input id="headline" type="text"/>
-            <input type="button" v-on:click="updateHeadline" value="Change headline"/> -->
+            <input type="button" @click="updateHeadline" value="Change headline"/> 
 
             <!-- Méthode 2 : on créé une variable newHeadline dans l'input et headline prend la valeur de newHeadline au moment du clic-->
             <!-- <input id="headline" type="text" v-model="newHeadline"/>
             <input type="button" v-on:click="headline = newHeadline" value="Change headline"/> -->
 
+            <!-- Si on coche la case, alors les titres h1 et h2 changent de couleur-->
+            <label for="changeColor">Changer la couleur du titre</label>
+            <input id="changeColor" type="checkbox" @click="changeColor = !changeColor"/>
           </form>
           
 

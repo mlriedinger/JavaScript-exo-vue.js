@@ -3,7 +3,8 @@ var app = new Vue({
     data: {
       storeName: 'Hello world !',
       headline: 'Best titre 2 ever',
-      newHeadline:''
+      newHeadline:'',
+      changeColor: false,
     },
     methods: {
         updateHeadline: function(){
