@@ -20,12 +20,12 @@
               <label for="headline">Headline</label></br>
              
               <!-- Méthode 1 : on appelle une fonction updateHeadline qui met à jour le h2-->
-              <input class="form-control" id="headline" type="text"/></br>
-              <input type="button" class="btn btn-dark" @click="updateHeadline" value="Change headline"/></br>
+              <!-- <input class="form-control" id="headline" type="text"/></br>
+              <input type="button" class="btn btn-dark" @click="updateHeadline" value="Change headline"/></br> -->
   
               <!-- Méthode 2 : on créé une variable newHeadline dans l'input et headline prend la valeur de newHeadline au moment du clic-->
-              <!-- <input id="headline" type="text" v-model="newHeadline"/>
-              <input type="button" v-on:click="headline = newHeadline" value="Change headline"/> -->
+              <input id="headline" type="text" v-model="newHeadline" placeholder="Change headline"/>
+              <input type="button" class="btn btn-dark" v-on:click="updateHeadline" value="Changer"/>
               <div class="form-group"> 
                 <!-- Si on coche la case, alors les titres h1 et h2 changent de couleur-->
                 <input id="changeColor" type="checkbox" @click="changeColor = !changeColor"/>
